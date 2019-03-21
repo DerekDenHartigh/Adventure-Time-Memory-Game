@@ -10,3 +10,7 @@ $('.flip-card').on('click', function() {
 
 
 /* card randomizer function here */
+
+const random = function(){
+    
+}
