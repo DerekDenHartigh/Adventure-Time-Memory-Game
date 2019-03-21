@@ -7,3 +7,7 @@ $('.flip-card').on('click', function() {
   console.log("this works");
   console.log(this);
 })
+
+
+// testing
+// new branch
