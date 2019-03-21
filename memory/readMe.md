@@ -4,6 +4,6 @@ Group Members:
     Derek DenHartigh
         ()
     Dave Gillespie
-        ()
+        (styling the cards and centering them)
     Mike Brameijer
         ()
