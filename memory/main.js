@@ -5,6 +5,24 @@ $(document).ready(function() {
     */
 
 
+const cards = document.querySelectorAll('.flip-card');
+
+
+ 
+let hasFlippedCard = false;
+let firstCard, secondCard;
+
+function flipCard() {
+  this.classList.toggle('flip');
+  this.classList.add('flip');
+
+if (!hasFlippedCard) {
+    hasFlippedCard = true;
+    firstCard = this;
+  }
+}
+
+cards.forEach(card => card.addEventListener('click', flipCard));
 
 // works kind of wonky... maybe with the avatar picture on the front it will work?
 // $('.flip-card').on('click', function() {
@@ -12,7 +30,7 @@ $(document).ready(function() {
 //   console.log("this works");
 //   console.log(this);
 // })
-$(() => {
+
   let pickCount = 0;
   let firstPick;
   let firstPickId;
