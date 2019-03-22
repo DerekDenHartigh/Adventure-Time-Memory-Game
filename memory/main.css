@@ -1,3 +1,5 @@
+/* Adv Time Font - idk what I'm doing */
+
 /*
 color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
     0,167,197 - blue
@@ -8,7 +10,9 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
 */
 
 /*Mobile styling*/
+
 body{
+    font-family: 'adventure_time_logoregular';
     width: 100vw;
     height: 100vh;
     background-color: rgb(166,222,249);
@@ -40,7 +44,6 @@ img{
     border: 1px solid #f1f1f1;
     perspective: 1000px; /* Remove this if you don't want the 3D effect */
   }
-  
   /* This container is needed to position the front and back side */
   .flip-card-inner {
     position: relative;
