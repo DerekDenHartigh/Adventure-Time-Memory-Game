@@ -250,7 +250,7 @@ body {
 
   /* comment this to reveal hidden elements */
   .hidden{
-    /* display: none;  */
+    display: none; 
   }
   #start-button{
     position: absolute;
