@@ -30,11 +30,11 @@ body {
 }
 
 .maincontainer {
-  /*
+  
     height: 100%;
     width: 100%;
     align-items: flex-start;
-  */
+ 
   display: flex;
   flex-wrap: wrap;
   justify-content: space-around;
@@ -250,7 +250,7 @@ body {
 
   /* comment this to reveal hidden elements */
   .hidden{
-    display: none; 
+    /* display: none;  */
   }
   #start-button{
     position: absolute;
