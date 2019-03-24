@@ -99,6 +99,14 @@ const cardRandomizer = function(){
     });
 };
 
+/* Start button Logic */
+
+
+
+/* Re-start button Logic */
+
+
+
 cardRandomizer()
 
 });

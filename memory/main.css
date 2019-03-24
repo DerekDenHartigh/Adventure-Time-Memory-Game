@@ -30,17 +30,14 @@ body {
 }
 
 .maincontainer {
-  
-    height: 100%;
-    width: 100%;
-    align-items: flex-start;
- 
   display: flex;
+  height: 100%;
+  width: 100%;
+  align-items: flex-start;
   flex-wrap: wrap;
   justify-content: space-around;
   margin: 0 auto;
   border: solid black 1px;
-  padding: 5px;
 }
 
 .back-side {
@@ -174,7 +171,15 @@ body {
   }
 
   /* Derek started messing with CSS here 3/22/19 */
-  
+  /* to prevent card clicking before hitting the start button*/
+  #cover-sheet{
+    background-color: none;
+    height: 100vh;
+    width: 100vw;
+    z-index: 2;
+    position: fixed;
+  }
+
   /* to cover up the cards upon a successful match */
   .card-cover{
     background-color: rgb(166,222,249);
@@ -184,6 +189,7 @@ body {
   }
 
   #header{
+    background-color: rgb(255,198,32); /* not sure which banner color to go with yet */
     background-color: rgb(245,203,243);
     border-radius: 15px;
     width: 95%;
@@ -193,7 +199,9 @@ body {
     flex-wrap: none;
     justify-content: space-around;
     align-content: center;
-    position: absolute;
+    position: relative;
+    margin-top: 5px;
+    z-index: 3;
   }
 
     #logo-box{
@@ -261,7 +269,7 @@ body {
     z-index: 3;
   }
     #emerald{
-      opacity: .9;
+      opacity: .85;
     }
     #start-text{
       position: absolute;
@@ -272,6 +280,7 @@ body {
       top: 50%; 
       right: 50%;
       transform: translate(50%, -50%);
+      opacity: .8;
     }
     /* for hiding the cards until they are formatted properly */
     /* .flip-card{
