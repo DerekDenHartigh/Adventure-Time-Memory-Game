@@ -250,7 +250,7 @@ body {
 
   /* comment this to reveal hidden elements */
   .hidden{
-    /* display: none;  */
+    display: none; 
   }
   #start-button{
     position: absolute;
@@ -258,6 +258,7 @@ body {
     top: 50%; 
     right: 50%;
     transform: translate(50%, -50%);
+    z-index: 3;
   }
     #emerald{
       opacity: .9;
