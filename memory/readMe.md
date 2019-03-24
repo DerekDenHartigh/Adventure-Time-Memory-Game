@@ -29,3 +29,8 @@ the game.
     think Mike has this done, just need to make a banner with it
 ● Do not use a jQuery plugin to assist in the card turning/flipping
     Fiiiiiiine
+
+
+Fun stuff for later:
+    multiplayer (I'm thinking change the cursor color (also html player# or name display))
+    difficulty - more characters - either make more pages or have additional classes that hide/unhide the extra cards on difficulty selection (also would need to re-style to accomodate a higher card count.)

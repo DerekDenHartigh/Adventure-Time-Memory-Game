@@ -176,7 +176,6 @@ body {
     background-color: none;
     height: 100vh;
     width: 100vw;
-    z-index: 2;
     position: fixed;
   }
 
@@ -201,7 +200,6 @@ body {
     align-content: center;
     position: relative;
     margin-top: 5px;
-    z-index: 3;
   }
 
     #logo-box{
@@ -266,7 +264,6 @@ body {
     top: 50%; 
     right: 50%;
     transform: translate(50%, -50%);
-    z-index: 3;
   }
     #emerald{
       opacity: .85;
@@ -281,6 +278,16 @@ body {
       right: 50%;
       transform: translate(50%, -50%);
       opacity: .8;
+    }
+    /* for 3d positioning*/
+    .z1{
+      z-index: 1;
+    }
+    .z2{
+      z-index: 2;
+    }
+    .z3{
+      z-index: 3;
     }
     /* for hiding the cards until they are formatted properly */
     /* .flip-card{
