@@ -91,14 +91,57 @@ const cardRandomizer = function(){
         })
     };
     createCardDivArray();
-
-    console.warn(cardDivArray);
-
     cardDivArray.forEach(function(n){
         $(n).css("order", `${Math.floor(Math.random()*99)}`);
     });
 };
 
-cardRandomizer()
+/* Start button Logic*/
+/* on click of emerald (will clicking start text work?) */
+
+$("#start-button").click(function() {
+  cardRandomizer();
+  /*clear cover-sheet*/
+  $('#cover-sheet').addClass("hidden");
+  /* hide start-button */
+  $('#start-button').addClass("hidden");
+  /* start clock */
+  /*other options: bring up difficulty menu &/or multiplayer options*/
+});
+
+/* Re-start button Logic */
+
+$("#restart-button").click(function() {
+  /*bring up start button*/
+  if ($("#start-button").hasClass("hidden")===true){
+    $("#start-button").removeClass("hidden");
+  };
+  /*un hide cards*/
+  let cardCoverArray = [];
+  const createCoverDivArray = function(){
+    $("div").each(function(){
+        if ($(this).hasClass("card-cover")===true){
+            cardCoverArray.push(this);
+            return cardCoverArray;
+        };
+      });
+  };
+  createCoverDivArray();
+  console.log(cardCoverArray);
+  cardCoverArray.forEach(function(n){
+    if ($(n).hasClass("hidden")===false){
+      $(n).addClass("hidden");
+    }
+  });
+  /*flip cards if they aren't hidden on cover-up*/
+
+  /*stop clock*/
+
+  /*zero out clock*/
+
+});
+
+
+
 
 });
