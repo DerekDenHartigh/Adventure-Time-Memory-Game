@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Memory Group Lab</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" media="screen" href="CSS Reset.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheet.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="main.css">
+</head>
+  <body>
+    <!--
+        Images:
+        Logo / card back: https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png
+        Finn the human - https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/f/f3/Original_Finn.png/revision/latest?cb=20120921151658
+        Jake the dog - https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/3/3b/Jakesalad.png/revision/latest?cb=20160503014517
+        Ice King - https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/6/64/Original_Ice_King.png/revision/latest/scale-to-width-down/150?cb=20160405041324
+        Princess Bubblegum (PB): https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/0/00/Princess_Bubblegum.png/revision/latest/scale-to-width-down/100?cb=20120921151236
+        Lady Rainicorn: https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/a/ad/1ATLadyRainicornLook.png/revision/latest?cb=20111213075543
+        Marceline (the vampire queen): https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/e/e0/Marceline_Stock_Night.png/revision/latest/scale-to-width-down/95?cb=20121003133650
+        Lumpy Space Princess (LSP): https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/9/9f/Lumpy_Space.png/revision/latest?cb=20110730224431
+        BMO: https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/8/81/BMO.png/revision/latest?cb=20161024201513
+        if we want to add more: https://adventuretime.fandom.com/wiki/Category:Characters
+        emerald for start button? https://www.pngarts.com/files/2/Emerald-PNG-Picture.png
+        refresh symbol/button: http://icons.iconarchive.com/icons/oxygen-icons.org/oxygen/256/Actions-view-refresh-icon.png
+    -->
+
+      <!-- <div class="maincontainer"> -->
+        <div id="header">
+            <div id="logo-box">
+                <img src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Adventure-time-logo" id="logo">
+                Memory Game
+            </div>
+            <div id="clock-box">
+                <!--Insert Mike's clock here-->
+            </div>
+            <div id="restart-box">
+                <!---->
+            </div>
+            <div id="start-button">
+                Start
+                <img src="https://www.pngarts.com/files/2/Emerald-PNG-Picture.png" alt="emerald start button" id="gem">
+            </div>
+        </div>
+
+<!-- Add ID#s 1-16 on each flip-card div, add name classes to flipcards? if Mike's logic calls for that-->
+
+      <div class="maincontainer">
+          <div class="flip-card" id="1" data-framework="1">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/3/3b/Jakesalad.png/revision/latest?cb=20160503014517" alt="1">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="2" data-framework="1">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/3/3b/Jakesalad.png/revision/latest?cb=20160503014517" alt="1">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="3" data-framework="2">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/6/64/Original_Ice_King.png/revision/latest/scale-to-width-down/150?cb=20160405041324" alt="2">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="4" data-framework="2">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/6/64/Original_Ice_King.png/revision/latest/scale-to-width-down/150?cb=20160405041324" alt="2">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="5" data-framework="3">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/0/00/Princess_Bubblegum.png/revision/latest/scale-to-width-down/100?cb=20120921151236" alt="3">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="6" data-framework="3">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/0/00/Princess_Bubblegum.png/revision/latest/scale-to-width-down/100?cb=20120921151236" alt="3">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="7" data-framework="4">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/a/ad/1ATLadyRainicornLook.png/revision/latest?cb=20111213075543" alt="4">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="8" data-framework="4">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/a/ad/1ATLadyRainicornLook.png/revision/latest?cb=20111213075543" alt="4">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="9" data-framework="5">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/e/e0/Marceline_Stock_Night.png/revision/latest/scale-to-width-down/95?cb=20121003133650" alt="5">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="10" data-framework="5">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/e/e0/Marceline_Stock_Night.png/revision/latest/scale-to-width-down/95?cb=20121003133650" alt="5">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="11" data-framework="6">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/9/9f/Lumpy_Space.png/revision/latest?cb=20110730224431" alt="6">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="12" data-framework="6">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/9/9f/Lumpy_Space.png/revision/latest?cb=20110730224431" alt="6">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png" alt="Flip Card">
+          </div>
+
+          <div class="flip-card" id="13" data-framework="7">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/f/f3/Original_Finn.png/revision/latest?cb=20120921151658">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png">
+          </div>
+
+          <div class="flip-card" id="14" data-framework="7">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/f/f3/Original_Finn.png/revision/latest?cb=20120921151658">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png">
+          </div>
+
+          <div class="flip-card" id="15" data-framework="8">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/8/81/BMO.png/revision/latest?cb=20161024201513">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png">
+          </div>
+
+          <div class="flip-card" id="16" data-framework="8">
+            <img class="front-side" src="https://vignette.wikia.nocookie.net/adventuretimewithfinnandjake/images/8/81/BMO.png/revision/latest?cb=20161024201513">
+            <img class="back-side" src="https://upload.wikimedia.org/wikipedia/fr/6/6f/Adventure_Time_logo.png">
+          </div>
+
+
+    </div>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="main.js"></script>
+  </body>
+</html>
