@@ -1,4 +1,3 @@
-
 /*
 color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
     0,167,197 - blue
@@ -9,6 +8,13 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
 */
 
 /*Mobile styling*/
+
+
+/* custom cursor attempt - sword as default, Billy's Gauntlet (will need to rotate -90deg) for hover on flipcards/clickables */
+html{
+  cursor: url('FinnSword.png'), auto;
+  cursor: url('FinnSword.cur'), auto;
+}
 
 * {
   padding: 0;
@@ -36,7 +42,7 @@ body {
   display: flex;
   height: 80%;
   width: 90%;
-  align-items: flex-start;
+  align-items: center;
   flex-wrap: wrap;
   justify-content: space-around;
   perspective: 1000px;
@@ -60,7 +66,7 @@ body {
   border-radius: 5px;
   background: #1C7CCC;
   backface-visibility: hidden;
-  transform: scale(1); /* trying this out */
+  transform: scale(1);
 }
 
 .front-side {
@@ -101,7 +107,6 @@ body {
   border-radius: 5px;
   background: #1C7CCC;
   backface-visibility: hidden;
-  /* transform: rotate(90deg); */
   transform: rotateX(180deg);
 }
 
@@ -120,8 +125,8 @@ body {
   flex-grow: 1;
   flex-shrink: 1;
   border: 1px solid #f1f1f1;
-  /* perspective: 1000px; Remove this if you don't want the 3D effect - I perspective only goes on parent */
 }
+
 .flip-card:hover{
   transform: scale(1.1);
   z-index: 5;
@@ -134,22 +139,6 @@ body {
 .flip-card.flip {
   transform: rotateX(180deg);
 }
-  /* This container is needed to position the front and back side */
-  /* .flip-card-inner {
-    position: relative;
-    width: 100%;
-    height: 100%;
-    text-align: center;
-    transition: transform 0.8s;
-    transform-style: preserve-3d;
-  } */
-  
-  /* Do an horizontal flip when you move the mouse over the flip box container */
-  /* .flip-card:hover .flip-card-inner {
-    transform: rotateY(180deg);
-  } */
-  
-  /* Position the front and back side */
 
   .flip-card-front, .flip-card-back {
     position: absolute;
@@ -157,21 +146,7 @@ body {
     height: 100%;
     backface-visibility: hidden;
   }
-  
-  /* Style the front side (fallback if image is missing) */
-  /* .flip-card-front {
-    background-color: #bbb;
-    color: black;
-  } */
-  
-  /* Style the back side */
-  /* .flip-card-back {
-    background-color: #4bcdfc;
-    color: white;
-    transform: rotateY(180deg);
-  } */
 
-  /* Derek started messing with CSS here 3/22/19 */
   /* to prevent card clicking before hitting the start button*/
   #cover-sheet{
     background-color: none;
@@ -251,7 +226,6 @@ body {
         align-self: center;
       }
 
-  /* comment this to reveal hidden elements */
   .hidden{
     display: none; 
   }
@@ -277,6 +251,7 @@ body {
       transform: translate(50%, -50%);
       opacity: .8;
     }
+
     /* for 3d positioning*/
     .z1{
       z-index: 1;
@@ -287,24 +262,6 @@ body {
     .z3{
       z-index: 3;
     }
-
-    /* test styling - remove after testing */
-    /* .back-side{
-      display: none;
-      backface-visibility: visible;
-      background-color: none;
-    }
-    .front-side{
-      transform: rotateY(0deg);
-    }
-    #start-button{
-      display: none;
-    }
-    #coversheet{
-      display: none;
-      z-index: 1;
-    } */
-    /* end test*/
 
     /* image specific styling */
     #jake{
@@ -335,4 +292,73 @@ body {
 
 @media only screen and (min-width: 600px) {
     /*Desktop styling*/
+  .maincontainer{
+    width: 600px;
+  }
+  
+  #header{
+    justify-content: space-between;
+  }
+      #logo-box{
+        flex-direction: row;
+        justify-items: flex-start;
+      }
+  
+        #small-logo{
+          height: 100px;
+          width: 200px;
+        }
+        #memory-game{
+          font-size: 2em;
+          text-shadow: 3px 2px rgb(112, 4, 4)
+        }
+  
+        #clock-placeholder{
+          width: auto;
+        }
+  
+      #restart-box{
+        display: flex;
+        width: 15%;
+      }
+  
+        #restart-button{
+          width: 80px;
+          height: 80px;
+        }
+  
+    #start-button{
+      width: auto;
+    }
+      #emerald{
+        width: 453px;
+        height: 359px;
+      }
+      #start-text{
+        position: absolute;
+        font-size: 3em;
+        color: #EB0600;
+          text-shadow: 1px 1px 2px #000000;
+          text-shadow: 1px 1px rgb(112, 4, 4);
+        top: 50%; 
+        right: 50%;
+        transform: translate(50%, -50%);
+        opacity: .8;
+      }
+}
+@media only screen and (min-width: 900px) {
+  .maincontainer{
+    min-width: 900px;
+    max-width: 90%;
+    background-image:  url("AdventureTimeBackground1.jpg");
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    border: solid rgb(245,203,243) 5px;
+    border-radius: 10px;
+  }
+  #memory-game{
+  font-size: 2.9em;
+  width: 50%;
+  text-shadow: 4px 2px rgb(112, 4, 4)
+}
 }
