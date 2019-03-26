@@ -34,3 +34,4 @@ the game.
 Fun stuff for later:
     multiplayer (I'm thinking change the cursor color (also html player# or name display))
     difficulty - more characters - either make more pages or have additional classes that hide/unhide the extra cards on difficulty selection (also would need to re-style to accomodate a higher card count.)
+    maybe a hover effect on the cards? like a subtle 3D lift?(transform: scale(1.1?);)

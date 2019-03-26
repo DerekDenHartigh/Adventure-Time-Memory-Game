@@ -25,29 +25,42 @@ body {
     font-family: 'adventure_time_logoregular';
     height: 100vh;
     width: 100vw;
-  /* display: flex; */
     background-color: rgb(166,222,249);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
 }
 
 .maincontainer {
   display: flex;
-  height: 100%;
-  width: 100%;
+  height: 80%;
+  width: 90%;
   align-items: flex-start;
   flex-wrap: wrap;
   justify-content: space-around;
-  margin: 0 auto;
-  border: solid black 1px;
+  perspective: 1000px;
 }
+
+.front-side, .back-side {
+      width: 100%;
+      height: 100%;
+      padding: 20px;
+      position: absolute;
+      border-radius: 5px;
+      background: #1C7CCC;
+      backface-visibility: hidden;
+    }
 
 .back-side {
   width: 100%;
   height: 100%;
-  padding: 20px;
+  padding: 20px 5px;
   position: absolute;
   border-radius: 5px;
   background: #1C7CCC;
   backface-visibility: hidden;
+  transform: scale(1); /* trying this out */
 }
 
 .front-side {
@@ -71,30 +84,18 @@ body {
 }
 
 .flip-card {
-  width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
-  margin: 5px;
-  position: relative;
+  display: flex;
+  width: calc(25%);
+  height: calc(25%);
   transform: scale(1);
   transform-style: preserve-3d;
   transition: transform .5s;
   transform: rotate(90deg);
 }
 
-.back-side {
+.front-side {
   width: 100%;
   height: 100%;
-  padding: 20px;
-  /* position: absolute; */
-  transform: scale(1); /* trying this out */
-  border-radius: 5px;
-  background: #1C7CCC;
-  backface-visibility: hidden;
-}
-
-.front-side {
-  /* width: 100%;
-  height: 100%; */
   padding: 20px;
   position: absolute;
   border-radius: 5px;
@@ -107,14 +108,24 @@ body {
 .flip-card {
   display: flex;
   width: calc(25% - 10px);
-  height: calc(33.333% - 10px);
+  height: calc(20% - 10px);
   margin: 5px;
   position: relative;
   transform-style: preserve-3d;
-  box-shadow: 1px 1px 0 rgba(0, 0, 0, .3);
+  box-shadow: 5px 5px 5px rgba(0,0,0,.3);
   transform: scale(1);
+  transition: transform .5s;
+  border-radius: 5px;
+  background-color: transparent;
+  flex-grow: 1;
+  flex-shrink: 1;
+  border: 1px solid #f1f1f1;
+  /* perspective: 1000px; Remove this if you don't want the 3D effect - I perspective only goes on parent */
 }
-
+.flip-card:hover{
+  transform: scale(1.1);
+  z-index: 5;
+}
 .flip-card:active {
   transform: scale(0.97);
   transition: transform .2s;
@@ -123,25 +134,15 @@ body {
 .flip-card.flip {
   transform: rotateX(180deg);
 }
-.flip-card {
-    background-color: transparent;
-    display: flex;
-    flex-grow: 1;
-    flex-shrink: 1;
-    width: 23%;
-    height: 20%;
-    border: 1px solid #f1f1f1;
-    perspective: 1000px; /* Remove this if you don't want the 3D effect */
-  }
   /* This container is needed to position the front and back side */
-  .flip-card-inner {
+  /* .flip-card-inner {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
     transition: transform 0.8s;
     transform-style: preserve-3d;
-  }
+  } */
   
   /* Do an horizontal flip when you move the mouse over the flip box container */
   /* .flip-card:hover .flip-card-inner {
@@ -158,28 +159,28 @@ body {
   }
   
   /* Style the front side (fallback if image is missing) */
-  .flip-card-front {
+  /* .flip-card-front {
     background-color: #bbb;
     color: black;
-  }
+  } */
   
   /* Style the back side */
-  .flip-card-back {
+  /* .flip-card-back {
     background-color: #4bcdfc;
     color: white;
     transform: rotateY(180deg);
-  }
+  } */
 
   /* Derek started messing with CSS here 3/22/19 */
   /* to prevent card clicking before hitting the start button*/
   #cover-sheet{
     background-color: none;
-    height: 100vh;
-    width: 100vw;
+    height: 100%;
+    width: 100%;
     position: fixed;
   }
 
-  /* to cover up the cards upon a successful match */
+  /* to cover up the cards upon a successful match - not sure if we're using this or not*/
   .card-cover{
     background-color: rgb(166,222,249);
     height: 100%;
@@ -188,27 +189,25 @@ body {
   }
 
   #header{
-    background-color: rgb(255,198,32); /* not sure which banner color to go with yet */
-    background-color: rgb(245,203,243);
+    background-color: rgb(255,198,32);
     border-radius: 15px;
     width: 95%;
-    height: 75px;
+    height: 15%;
     display: flex;
     flex-direction: row;
     flex-wrap: none;
     justify-content: space-around;
     align-content: center;
     position: relative;
-    margin-top: 5px;
   }
 
     #logo-box{
       display: flex;
       flex-direction: column;
       justify-content: center;
+      justify-items: center;
       align-content: center;
-      text-align: center;
-      vertical-align: bottom;
+      align-items: center;
       flex-basis: auto;
       padding: 5px;
       border-radius: 30px;
@@ -216,14 +215,13 @@ body {
 
       #small-logo{
         display: flex;
-        height: 40px;
-        width: calc(2.5*40px);
+        height: 55px;
+        width: 110px;
       }
       #memory-game{
-        display: flex;
-        font-size: .8em;
+        text-align: center;
+        font-size: 1em;
         color: #EB0600;
-        text-shadow: 1px 1px 2px #000000;
         text-shadow: 1px 1px rgb(112, 4, 4)
       }
 
@@ -234,7 +232,6 @@ body {
       flex-basis: content;
     }
       #clock-placeholder{
-        height: 80px;
         width: 120px;
       }
 
@@ -258,6 +255,7 @@ body {
   .hidden{
     display: none; 
   }
+  
   #start-button{
     position: absolute;
     width: 80%;
@@ -289,57 +287,52 @@ body {
     .z3{
       z-index: 3;
     }
-    /* for hiding the cards until they are formatted properly */
-    /* .flip-card{
-      display: none;
-    } */
 
-    /* Dave copy/paste */
-    .maincontainer {
-      width: 640px;
-      height: 640px;
-      margin: auto;
-      display: flex;
-      flex-wrap: wrap;
-      perspective: 1000px;
+    /* test styling - remove after testing */
+    /* .back-side{
+      display: none;
+      backface-visibility: visible;
+      background-color: none;
     }
-    
-    .flip-card {
-      width: calc(25% - 10px);
-      height: calc(33.333% - 10px);
-      margin: 5px;
-      position: relative;
-      box-shadow: 5px 5px 5px rgba(0,0,0,.3);
-      transform: scale(1);
-      transform-style: preserve-3d;
-      transition: transform .5s;
-      border-radius: 5px;
+    .front-side{
+      transform: rotateY(0deg);
     }
-    
-    .front-side,
-    .back-side {
-      width: 100%;
-      height: 100%;
-      padding: 20px;
-      position: absolute;
-      border-radius: 5px;
-      background: #1C7CCC;
-      backface-visibility: hidden;
+    #start-button{
+      display: none;
     }
-    
-    .front-side {
-      transform: rotateY(180deg);
+    #coversheet{
+      display: none;
+      z-index: 1;
+    } */
+    /* end test*/
+
+    /* image specific styling */
+    #jake{
+      padding: 10px 25px;
     }
-    
-    .flip-card:active {
-      transform: scale(0.97);
-      transition: transform .2s;
+    #ice-king{
+      padding: 10px 19px;
     }
-    
-    .flip-card.flip {
-      transform: rotateY(180deg);
+    #princess-bubblegum{
+      padding: 10px 30px;
     }
-    /*end*/
+    #lady-rainicorn{
+      padding: 10px 20px;
+      padding-bottom: 0px;
+    }
+    #marceline{
+      padding: 10px 30px;
+    }
+    #lsp{
+      padding: 10px 13px;
+    }
+    #finn{
+      padding: 10px 15px;
+    }
+    #bmo{
+      padding: 10px 10px;
+    }
+
 @media only screen and (min-width: 600px) {
     /*Desktop styling*/
 }
