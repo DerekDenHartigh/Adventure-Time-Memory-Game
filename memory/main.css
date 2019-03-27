@@ -12,18 +12,6 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
 
 /* custom cursor attempt - sword as default, Billy's Gauntlet (will need to rotate -90deg) for hover on flipcards/clickables */
 
-* {
-  cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), auto;
-  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), auto;
-  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), default;
-  cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), default;
-}
-
-#start-button:hover, .flip-card:hover, #restart-button:hover, #start-game{
-cursor: url("group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png");
-cursor: url(group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png);
-} 
-
 img {
   width: 100%;
   height: 100%;
@@ -130,11 +118,13 @@ body {
   flex-shrink: 1;
   border: 1px solid #f1f1f1;
 }
-/*  Need to test if this interferes or not
+
+ /* Need to test if this interferes or not - card selection emphasis */
 .flip-card:hover{
   transform: scale(1.1);
   z-index: 5;
-} */
+}
+
 .flip-card:active {
   transform: scale(0.97);
   transition: transform .2s;
@@ -454,3 +444,15 @@ body {
   width: 100%;
   height: 100%;
 } */
+
+* {
+  /* cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), auto;
+  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), auto;
+  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), default;
+  cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), default; */
+  cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
+}
+
+#start-button:hover, #emerald:hover, #start-text, .flip-card:hover, .front-side:hover, .back-side:hover, #restart-button:hover{
+cursor: url(group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
+} 
