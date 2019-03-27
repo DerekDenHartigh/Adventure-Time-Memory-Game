@@ -19,8 +19,9 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
   cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), default;
 }
 
-#start-button:hover, .flip-card:hover, #restart-button:hover{
-cursor: url("group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png")
+#start-button:hover, .flip-card:hover, #restart-button:hover, #start-game{
+cursor: url("group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png");
+cursor: url(group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png);
 } 
 
 img {
@@ -445,3 +446,11 @@ body {
   display:none;
 } */
 /*end test */ 
+
+
+/* considering adding this banner, would need to style the logo, clock, and restart to fit - or just logo here and the clock and restart button under?/*
+/* #banner{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+} */
