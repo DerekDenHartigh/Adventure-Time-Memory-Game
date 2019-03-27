@@ -13,10 +13,12 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
 /* custom cursor attempt - sword as default, Billy's Gauntlet (will need to rotate -90deg) for hover on flipcards/clickables */
 
 * {
-  cursor: url(group-lab1\memory\FinnSword.cur), auto;
+  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), auto;
 }
 
-#start-button:hover, 
+#start-button:hover{
+  
+} 
 
 img {
   width: 100%;
