@@ -104,7 +104,7 @@ $("#start-button").click(function() {
   /*clear cover-sheet*/
   $('#cover-sheet').addClass("hidden");
   /* hide start-button */
-  $('#start-button').addClass("hidden");
+  $('#start-button').fadeOut(500);
   /* start clock */
   /*other options: bring up difficulty menu &/or multiplayer options*/
 });
@@ -113,8 +113,9 @@ $("#start-button").click(function() {
 
 $("#restart-button").click(function() {
   /*bring up start button*/
-  if ($("#start-button").hasClass("hidden")===true){
-    $("#start-button").removeClass("hidden");
+  if ($("#start-button").is(":visible")===false){
+    $("#cover-sheet").removeClass("hidden");
+    $("#start-button").fadeIn(300);
   };
   /*un hide cards*/
   let cardCoverArray = [];
