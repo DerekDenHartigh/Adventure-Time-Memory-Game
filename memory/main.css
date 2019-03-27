@@ -220,6 +220,11 @@ body {
   .hidden{
     display: none; 
   }
+  #timerLabel{
+    border: 1px solid black;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+  }
   
   #start-button{
     position: absolute;
