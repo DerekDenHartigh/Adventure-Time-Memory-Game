@@ -452,14 +452,15 @@ body {
   cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), auto;
   cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), default;
   cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), default; */
-  cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
+  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
 }
 
 #start-button:hover, #emerald:hover, #start-text, .flip-card:hover, .front-side:hover, .back-side:hover, #restart-button:hover{
-cursor: url(group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
+cursor: url(group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
 } 
 
-.flip-card:hover{
+/* was messing up the flipped cards */
+/* .flip-card:hover{
   transform: scale(1.1);
   z-index: 5;
-}
+} */
