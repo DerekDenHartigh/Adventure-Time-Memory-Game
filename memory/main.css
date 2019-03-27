@@ -120,10 +120,7 @@ body {
 }
 
  /* Need to test if this interferes or not - card selection emphasis */
-.flip-card:hover{
-  transform: scale(1.1);
-  z-index: 5;
-}
+
 
 .flip-card:active {
   transform: scale(0.97);
@@ -456,3 +453,8 @@ body {
 #start-button:hover, #emerald:hover, #start-text, .flip-card:hover, .front-side:hover, .back-side:hover, #restart-button:hover{
 cursor: url(group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
 } 
+
+.flip-card:hover{
+  transform: scale(1.1);
+  z-index: 5;
+}
