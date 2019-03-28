@@ -1,6 +1,6 @@
 "use strict"
 $(() => {
-  // variables needed for the matching logic 
+  // variables needed for the matching logic
   let pickCount = 0;
   let firstPick;
   let firstPickId;
@@ -67,6 +67,7 @@ $(() => {
       $("#cover-sheet").removeClass("hidden");
       $("#start-button").fadeIn(300);
     };
+
     
     $("div").each(function () {
       if ($(this).hasClass("flip") === true) {
@@ -74,6 +75,7 @@ $(() => {
       }
       if ($(this).hasClass("invisible") === true) {
         this.classList.remove('invisible');
+
       }
     });
     timerStop();
@@ -84,6 +86,7 @@ $(() => {
 
 
   /*matching card logic */
+
   $(`.flip-card`).on(`click`, cardClick);
   function cardClick() {
     if ($(this).hasClass("invisible")===true){
@@ -157,6 +160,7 @@ $(() => {
       $("#cover-sheet").addClass("hidden")}, 700);;
   };
 
+
   /* card randomizer function here */
   const cardRandomizer = function () {
     const createCardDivArray = function () {
@@ -172,6 +176,13 @@ $(() => {
       $(n).css("order", `${Math.floor(Math.random() * 99)}`);
     });
   };
+
+
+$('#emerald').hide().delay(1000).fadeIn(1000);
+$('#start-text').hide().delay(1000).fadeIn(1000);
+
+
+});
 
   const coverCards = function(){
     $(firstCard.childNodes[5]).removeClass("hidden").addClass("z2");
