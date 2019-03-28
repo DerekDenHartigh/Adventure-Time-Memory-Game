@@ -44,8 +44,10 @@ img.back-side:hover, .invisible:hover, .flip-card > img.back-side:hover{
 }
 #timerText{
   font-size: 1.5em;
+  max-height: 45%;
 }
 #timerLabel{
+  max-height: 45%;
   padding: 5px;
   display: flex;
   flex-direction: row;

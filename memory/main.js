@@ -135,7 +135,6 @@ $(() => {
           if (numOfMatches === cardDivArray.length / 2) {
             console.log("you are the winner!!!!!!!!!!!");
             timerStop();
-            uncoverAllCards();
           }
           hideMatch();         
           coverCards();
