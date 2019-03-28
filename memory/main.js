@@ -163,11 +163,15 @@ $(() => {
   /* hide matches function */
   function hideMatch() {
     // gameLock=false;
-    setTimeout(() => {
+    /* to prevent card clicking */
+    $("#cover-sheet").removeClass("hidden");
+    setTimeout(function() {
       firstCard.classList.add(`invisible`);
       secondCard.classList.add(`invisible`);
     }, 700);
-  }
+    setTimeout(function(){
+      $("#cover-sheet").addClass("hidden")}, 700);
+  };
 
   function doTheyMatch(pick1, pick2) {
     if (pick1 === pick2) {
@@ -175,15 +179,19 @@ $(() => {
     } else {
       return false;
     }
-  }
+  };
+
   // function for unfliping non matches.
   function unflipCards() {
     // gameLock=false;
-    setTimeout(() => {
+    $("#cover-sheet").removeClass("hidden");
+    setTimeout( function(){
       firstCard.classList.remove(`flip`);
       secondCard.classList.remove(`flip`);
     }, 700);
-  }
+    setTimeout(function(){
+      $("#cover-sheet").addClass("hidden")}, 700);;
+  };
 
   /* card randomizer function here */
   const cardRandomizer = function () {
@@ -202,4 +210,10 @@ $(() => {
       $(n).css("order", `${Math.floor(Math.random() * 99)}`);
     });
   };
+
+  function disableCards() {
+    firstCard.removeEventListener('click', flipCard);
+    secondCard.removeEventListener('click', flipCard);
+  };
+
 });
