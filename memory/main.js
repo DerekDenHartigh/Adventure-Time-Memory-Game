@@ -1,6 +1,6 @@
 "use strict"
 $(() => {
-  // variables needed for the matching logic 
+  // variables needed for the matching logic
   let pickCount = 0;
   let firstPick;
   let firstPickId;
@@ -65,7 +65,7 @@ $(() => {
       $("#cover-sheet").removeClass("hidden");
       $("#start-button").fadeIn(300);
     };
-    
+
      /*un hide cards*/
     let cardCoverArray = [];
     const createCoverDivArray = function () {
@@ -93,6 +93,7 @@ $(() => {
 
 
   /*matching card logic */
+
   $(`.flip-card`).on(`click`, cardClick);
   function cardClick() {
     if (pickCount === 0) {
@@ -150,6 +151,7 @@ $(() => {
     }, 700);
   }
 
+
   /* card randomizer function here */
   const cardRandomizer = function () {
     // let cardDivArray = [];
@@ -167,5 +169,9 @@ $(() => {
       $(n).css("order", `${Math.floor(Math.random() * 99)}`);
     });
   };
+
+$('#emerald').hide().delay(1000).fadeIn(1000);
+$('#start-text').hide().delay(1000).fadeIn(1000);
+
 
 });
