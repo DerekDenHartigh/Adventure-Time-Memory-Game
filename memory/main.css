@@ -9,6 +9,31 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
 
 /*Mobile styling*/
 
+*, .card-cover:hover {
+  /* cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), auto;
+  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), auto;
+  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), default;
+  cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), default; */
+  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
+}
+
+#start-button:hover, #emerald:hover, #start-text, .front-side:hover, .back-side:hover, #restart-button:hover{
+cursor: url(group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
+} 
+
+/* was messing up the flipped cards */
+/* .flip-card:hover{
+  transform: scale(1.1);
+  z-index: 5;
+} */
+
+.invisible{
+  opacity: 0;
+}
+img.back-side:hover, .invisible:hover, .flip-card > img.back-side:hover{
+  cursor: pointer;
+}
+
 #clock-box{
   display: flex;
   flex-direction: column;
@@ -19,8 +44,10 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
 }
 #timerText{
   font-size: 1.5em;
+  max-height: 45%;
 }
 #timerLabel{
+  max-height: 45%;
   padding: 5px;
   display: flex;
   flex-direction: row;
@@ -171,10 +198,10 @@ body {
 
   /* to cover up the cards upon a successful match - not sure if we're using this or not*/
   .card-cover{
-    background-color: rgb(166,222,249);
     height: 100%;
     width: 100%;
     position: absolute;
+    opacity: 0;
   }
 
   #header{
@@ -241,13 +268,13 @@ body {
       }
 
   .hidden{
-    display: none; 
+    display: none;
   }
- 
+
   #start-button{
     position: absolute;
     width: 80%;
-    top: 50%; 
+    top: 50%;
     right: 50%;
     transform: translate(50%, -50%);
   }
@@ -260,8 +287,8 @@ body {
       color: #EB0600;
         text-shadow: 1px 1px 2px #000000;
         text-shadow: 1px 1px rgb(112, 4, 4);
-      top: 50%; 
-      right: 50%;
+      top: 45%;
+      right: 32%;
       transform: translate(50%, -50%);
       opacity: .8;
     }
@@ -312,7 +339,7 @@ body {
   }
 
   /* need to remember how to show front sides - tweaking images here */
-  
+
   #header{
     justify-content: space-between;
   }
@@ -320,7 +347,7 @@ body {
         flex-direction: row;
         justify-items: flex-start;
       }
-  
+
         #small-logo{
           height: 100px;
           width: 200px;
@@ -329,21 +356,17 @@ body {
           font-size: 2em;
           text-shadow: 3px 2px rgb(112, 4, 4)
         }
-  
-        /* #clock-placeholder{
-          width: auto;
-        } */
-  
+
       #restart-box{
         display: flex;
         width: 15%;
       }
-  
+
         #restart-button{
           width: 80px;
           height: 80px;
         }
-  
+
     #start-button{
       width: auto;
     }
@@ -357,10 +380,11 @@ body {
         color: #EB0600;
           text-shadow: 1px 1px 2px #000000;
           text-shadow: 1px 1px rgb(112, 4, 4);
-        top: 50%; 
-        right: 50%;
+        top: 45%;
+        right: 32%;
         transform: translate(50%, -50%);
         opacity: .8;
+
       }
 
       .maincontainer{
@@ -397,7 +421,7 @@ body {
       #bmo{
         padding: 5px 17%;
       }
-  
+
 
 }
 @media only screen and (min-width: 900px) {
@@ -471,7 +495,7 @@ body {
 #cover-sheet{
   display:none;
 } */
-/*end test */ 
+/*end test */
 
 
 /* considering adding this banner, would need to style the logo, clock, and restart to fit - or just logo here and the clock and restart button under?/*
@@ -479,6 +503,7 @@ body {
   position: absolute;
   width: 100%;
   height: 100%;
+
 } */
 
 * {
@@ -486,22 +511,186 @@ body {
   cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), auto;
   cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), default;
   cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), default; */
-  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
+  cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
 }
 
 #start-button:hover, #emerald:hover, #start-text, .flip-card:hover, .front-side:hover, .back-side:hover, #restart-button:hover{
-cursor: url(group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
-} 
+cursor: url(group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
+}
 
-/* was messing up the flipped cards */
 /* .flip-card:hover{
   transform: scale(1.1);
   z-index: 5;
 } */
 
-.invisible{
-  opacity: 0;
+
+
+
+
+
+
+
+/* ANIMATION BOO YAH. OF COURSE */
+.color-change-2x {
+	-webkit-animation: color-change-2x 2s linear infinite alternate both;
+  animation: color-change-2x 2s linear infinite alternate both;
 }
-img.back-side:hover, .invisible:hover, .flip-card > img.back-side:hover{
-  cursor: pointer;
+
+
+.vibrate-1 {
+	-webkit-animation: vibrate-1 0.3s linear infinite both;
+  animation: vibrate-1 0.3s linear infinite both;
+}
+
+.focus-in-expand-fwd {
+	-webkit-animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+  animation: focus-in-expand-fwd 0.8s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+.swirl-in-fwd {
+	-webkit-animation: swirl-in-fwd 1s ease-out both;
+	        animation: swirl-in-fwd 1s ease-out both;
+}
+
+
+
+@-webkit-keyframes color-change-2x {
+  0% {
+    /* background: #1C7CCC; */
+    background: #EB0600;
+  }
+  100% {
+    background: #b22cff;
+  }
+}
+@keyframes color-change-2x {
+  0% {
+    background: #19dcea;
+    /* background: #EB0600; */
+  }
+  100% {
+    background: rgb(255,198,32);
+  }
+}
+
+
+
+@-webkit-keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+@keyframes vibrate-1 {
+  0% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+  20% {
+    -webkit-transform: translate(-2px, 2px);
+            transform: translate(-2px, 2px);
+  }
+  40% {
+    -webkit-transform: translate(-2px, -2px);
+            transform: translate(-2px, -2px);
+  }
+  60% {
+    -webkit-transform: translate(2px, 2px);
+            transform: translate(2px, 2px);
+  }
+  80% {
+    -webkit-transform: translate(2px, -2px);
+            transform: translate(2px, -2px);
+  }
+  100% {
+    -webkit-transform: translate(0);
+            transform: translate(0);
+  }
+}
+
+
+
+
+
+@-webkit-keyframes focus-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes focus-in-expand-fwd {
+  0% {
+    letter-spacing: -0.5em;
+    -webkit-transform: translateZ(-800px);
+            transform: translateZ(-800px);
+    -webkit-filter: blur(12px);
+            filter: blur(12px);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    -webkit-filter: blur(0);
+            filter: blur(0);
+    opacity: 1;
+  }
+}
+
+
+
+
+@-webkit-keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+@keyframes swirl-in-fwd {
+  0% {
+    -webkit-transform: rotate(-540deg) scale(0);
+            transform: rotate(-540deg) scale(0);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotate(0) scale(1);
+            transform: rotate(0) scale(1);
+    opacity: 1;
+  }
 }
