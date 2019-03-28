@@ -199,7 +199,7 @@ $('#emerald').hide().delay(1000).fadeIn(1000);
 $('#start-text').hide().delay(1000).fadeIn(1000);
 
 
-});
+
 
   const coverCards = function(){
     $(firstCard.childNodes[5]).removeClass("hidden").addClass("z2");
