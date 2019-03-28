@@ -57,7 +57,7 @@ img.back-side:hover, .invisible:hover, .flip-card > img.back-side:hover{
   border-radius: 15px;
   text-align: center;
   background-color: rgb(0,167,197);
-  color: rgb(255,198,32);
+  color: rgb(0,167,197);
   font-family: 'Courier New', Courier, monospace;
   font-size: 2em;
 }

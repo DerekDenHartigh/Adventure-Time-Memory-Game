@@ -22,6 +22,9 @@ $(() => {
 
   function timerStop() {
     status = 0;
+
+    $(`#timerLabel`).css('color', 'rgb(0,167,197)');
+
   }
 
   function timerReset() {
@@ -56,6 +59,9 @@ $(() => {
     $('#start-button').fadeOut(500);
     /* start clock */
     timerStart();
+    $(`#timerLabel`).css('color', ' rgb(255,198,32)');
+    /*other options: bring up difficulty menu &/or multiplayer options*/
+
    });
 
   //reset button functions
@@ -81,6 +87,14 @@ $(() => {
     timerStop();
     timerReset();
     timerLabel.innerHTML = '00:00:00';
+
+    $(`#timerLabel`).css('color', 'rgb(0,167,197)');
+    /*flip cards if they aren't hidden on cover-up*/
+
+    /*stop clock*/
+
+    /*zero out clock*/
+
     $(`#timerLabel`).css('color', 'none')
   });
 
@@ -119,8 +133,11 @@ $(() => {
           numOfMatches++;
           console.log({ numOfMatches });
           if (numOfMatches === cardDivArray.length / 2) {
-            console.warn("you're winner!!!!!!!!!!!");
+
             timerStop();
+            let finalTime = $(`#timerLabel`).text();
+            console.log(`You win. it took you ${finalTime}`);
+            
           }
           hideMatch();         
           coverCards();
