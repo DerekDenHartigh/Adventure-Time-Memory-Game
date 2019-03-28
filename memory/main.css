@@ -44,7 +44,7 @@ img.back-side:hover, .invisible:hover, .flip-card > img.back-side:hover{
 }
 #timerText{
   font-size: 1.5em;
-  max-height: 45%;
+  max-height: 35%;
 }
 #timerLabel{
   max-height: 45%;
