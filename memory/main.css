@@ -9,8 +9,31 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
 
 /*Mobile styling*/
 
-
-/* custom cursor attempt - sword as default, Billy's Gauntlet (will need to rotate -90deg) for hover on flipcards/clickables */
+#clock-box{
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  align-items: center;
+  justify-content: center;
+  justify-items: space-around;
+}
+#timerText{
+  font-size: 1.5em;
+}
+#timerLabel{
+  padding: 5px;
+  display: flex;
+  flex-direction: row;
+  align-self: center;
+  justify-self: center;
+  justify-content: center;
+  border-radius: 15px;
+  text-align: center;
+  background-color: rgb(0,167,197);
+  color: rgb(255,198,32);
+  font-family: 'Courier New', Courier, monospace;
+  font-size: 2em;
+}
 
 img {
   width: 100%;
@@ -191,7 +214,7 @@ body {
         text-shadow: 1px 1px rgb(112, 4, 4)
       }
 
-    #clock-box{
+    /* #clock-box{
       display: flex;
       align-content: center;
       justify-content: center;
@@ -199,7 +222,7 @@ body {
     }
       #clock-placeholder{
         width: 120px;
-      }
+      } */
 
     #restart-box{
       display: flex;
@@ -220,12 +243,7 @@ body {
   .hidden{
     display: none; 
   }
-  #timerLabel{
-    border: 1px solid black;
-    color: #000000;
-    font-family: 'Courier New', Courier, monospace;
-  }
-  
+ 
   #start-button{
     position: absolute;
     width: 80%;
@@ -312,9 +330,9 @@ body {
           text-shadow: 3px 2px rgb(112, 4, 4)
         }
   
-        #clock-placeholder{
+        /* #clock-placeholder{
           width: auto;
-        }
+        } */
   
       #restart-box{
         display: flex;
@@ -424,8 +442,24 @@ body {
     padding: 5px 24%;
   }
 
+  #timerText{
+    font-size: 1.8em;
+  }
+  #timerLabel{
+    padding: 7px;
+    font-size: 1.8em;
+  }
 }
 
+@media only screen and (min-width: 985px) {
+  #timerText{
+    font-size: 2.5em;
+  }
+  #timerLabel{
+    padding: 10px;
+    font-size: 2.5em;
+  }
+}
 /* testing styling - to show card faces and remove cover div*/
 /* .flip-card{
   transform: rotateX(180deg);
