@@ -68,23 +68,6 @@ $(() => {
       $("#start-button").fadeIn(300);
     };
     
-     /*un hide cards*/
-    // let cardCoverArray = [];
-    // const createCoverDivArray = function () {
-    //   $("div").each(function () {
-    //     if ($(this).hasClass("card-cover") === true) {
-    //       cardCoverArray.push(this);
-    //       return cardCoverArray;
-    //     };
-    //   });
-    // };
-    // createCoverDivArray();
-    // console.log(cardCoverArray);
-    // cardCoverArray.forEach(function (n) {
-    //   if ($(n).hasClass("hidden") === false) {
-    //     $(n).addClass("hidden");
-    //   }
-    // });
     $("div").each(function () {
       if ($(this).hasClass("flip") === true) {
         this.classList.remove('flip');
@@ -133,7 +116,7 @@ $(() => {
           numOfMatches++;
           console.log({ numOfMatches });
           if (numOfMatches === cardDivArray.length / 2) {
-            console.log("you are the winner!!!!!!!!!!!");
+            console.warn("you're winner!!!!!!!!!!!");
             timerStop();
           }
           hideMatch();         
@@ -197,9 +180,7 @@ $(() => {
 
   const uncoverAllCards = function(){
     cardDivArray.forEach(function (n) {
-      console.warn($(n.childNodes[5]))
       $(n.childNodes[5]).removeClass("z2").addClass("hidden");
-      console.log($(n.childNodes[5]))
     });
   };
 
