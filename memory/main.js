@@ -1,6 +1,7 @@
 "use strict"
 $(() => {
   // variables needed for the matching logic 
+  // let gameLock = false;
   let pickCount = 0;
   let firstPick;
   let firstPickId;
@@ -67,22 +68,34 @@ $(() => {
     };
     
      /*un hide cards*/
-    let cardCoverArray = [];
-    const createCoverDivArray = function () {
-      $("div").each(function () {
-        if ($(this).hasClass("card-cover") === true) {
-          cardCoverArray.push(this);
-          return cardCoverArray;
-        };
-      });
-    };
-    createCoverDivArray();
-    console.log(cardCoverArray);
-    cardCoverArray.forEach(function (n) {
-      if ($(n).hasClass("hidden") === false) {
-        $(n).addClass("hidden");
+    // let cardCoverArray = [];
+    // const createCoverDivArray = function () {
+    //   $("div").each(function () {
+    //     if ($(this).hasClass("card-cover") === true) {
+    //       cardCoverArray.push(this);
+    //       return cardCoverArray;
+    //     };
+    //   });
+    // };
+    // createCoverDivArray();
+    // console.log(cardCoverArray);
+    // cardCoverArray.forEach(function (n) {
+    //   if ($(n).hasClass("hidden") === false) {
+    //     $(n).addClass("hidden");
+    //   }
+    // });
+    $("div").each(function () {
+      if ($(this).hasClass("flip") === true) {
+        this.classList.remove('flip');
+      }
+      if ($(this).hasClass("invisible") === true) {
+        this.classList.remove('invisible');
       }
     });
+    timerStop();
+    timerReset();
+    timerLabel.innerHTML = '00:00:00';
+    $(`#timerLabel`).css('color', 'none')
     /*flip cards if they aren't hidden on cover-up*/
 
     /*stop clock*/
@@ -95,7 +108,13 @@ $(() => {
   /*matching card logic */
   $(`.flip-card`).on(`click`, cardClick);
   function cardClick() {
-    if (pickCount === 0) {
+    // if (gameLock===true){
+    //   return;
+    // }
+    if ($(this).hasClass("invisible")===true){
+      return;
+    }
+    else if (pickCount === 0) {
       pickCount++;
       firstCard = this;
       console.log({ firstCard });
@@ -106,6 +125,7 @@ $(() => {
       console.log({ firstPick });
       console.log({ firstPickId });
     } else if (pickCount === 1) {
+      // gameLock=true;
       secondPickId = $(this).attr('id');
       if (firstPickId === secondPickId) {
         return;
@@ -119,20 +139,34 @@ $(() => {
         let matchBoolean = doTheyMatch(firstPick, secondPick);
         console.log({ matchBoolean });
         if (matchBoolean === true) {
-
           numOfMatches++;
           console.log({ numOfMatches });
           if (numOfMatches === cardDivArray.length / 2) {
             console.log("you are the winner!!!!!!!!!!!");
             timerStop();
           }
+          /* Derek's Meddlings - to hide the cards upon successful match */
+          // firstCard.fadeOut(100);
+          // secondCard.fad(100);
+          hideMatch();
+          /* end meddling */
           console.log("its a match");
+          // gameLock=false;
         } else {
           unflipCards();
           console.log("NOT A MATCH!!");
+          // gameLock=false;
         }
       }
     }
+  }
+  /* hide matches function */
+  function hideMatch() {
+    // gameLock=false;
+    setTimeout(() => {
+      firstCard.classList.add(`invisible`);
+      secondCard.classList.add(`invisible`);
+    }, 700);
   }
 
   function doTheyMatch(pick1, pick2) {
@@ -144,6 +178,7 @@ $(() => {
   }
   // function for unfliping non matches.
   function unflipCards() {
+    // gameLock=false;
     setTimeout(() => {
       firstCard.classList.remove(`flip`);
       secondCard.classList.remove(`flip`);
@@ -167,5 +202,4 @@ $(() => {
       $(n).css("order", `${Math.floor(Math.random() * 99)}`);
     });
   };
-
 });

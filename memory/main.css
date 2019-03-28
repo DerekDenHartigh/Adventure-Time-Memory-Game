@@ -464,3 +464,10 @@ cursor: url(group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png),
   transform: scale(1.1);
   z-index: 5;
 } */
+
+.invisible{
+  opacity: 0;
+}
+img.back-side:hover, .invisible:hover, .flip-card > img.back-side:hover{
+  cursor: pointer;
+}
