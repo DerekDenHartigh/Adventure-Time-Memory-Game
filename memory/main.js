@@ -62,6 +62,7 @@ $(() => {
 
   $("#restart-button").click(function() {
     /*bring up start button*/
+      uncoverAllCards();
     if ($("#start-button").is(":visible")===false){
       $("#cover-sheet").removeClass("hidden");
       $("#start-button").fadeIn(300);
@@ -134,20 +135,9 @@ $(() => {
           if (numOfMatches === cardDivArray.length / 2) {
             console.log("you are the winner!!!!!!!!!!!");
             timerStop();
-            const uncoverAllCards = function(){
-              cardDivArray.forEach(function (n) {
-                console.warn($(n.childNodes[5]))
-                $(n.childNodes[5]).removeClass("z2").addClass("hidden");
-                console.log($(n.childNodes[5]))
-              });
-            };
             uncoverAllCards();
           }
           hideMatch();         
-          const coverCards = function(){
-            $(firstCard.childNodes[5]).removeClass("hidden").addClass("z2");
-            $(secondCard.childNodes[5]).removeClass("hidden").addClass("z2");
-          }
           coverCards();
           console.log("its a match");
         } else {
@@ -198,6 +188,19 @@ $(() => {
     createCardDivArray();
     cardDivArray.forEach(function (n) {
       $(n).css("order", `${Math.floor(Math.random() * 99)}`);
+    });
+  };
+
+  const coverCards = function(){
+    $(firstCard.childNodes[5]).removeClass("hidden").addClass("z2");
+    $(secondCard.childNodes[5]).removeClass("hidden").addClass("z2");
+  }
+
+  const uncoverAllCards = function(){
+    cardDivArray.forEach(function (n) {
+      console.warn($(n.childNodes[5]))
+      $(n.childNodes[5]).removeClass("z2").addClass("hidden");
+      console.log($(n.childNodes[5]))
     });
   };
 
