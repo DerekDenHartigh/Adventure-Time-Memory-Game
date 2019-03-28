@@ -1,7 +1,6 @@
 "use strict"
 $(() => {
   // variables needed for the matching logic 
-  // let gameLock = false;
   let pickCount = 0;
   let firstPick;
   let firstPickId;
@@ -15,19 +14,22 @@ $(() => {
   let status = 0; // 0:stop 1:running
   let time = 0;
   // below are the functions for the timer
+
   function timerStart() {
     status = 1;
     timer();
   }
+
   function timerStop() {
     status = 0;
-
   }
+
   function timerReset() {
     status = 0;
     time = 0;
     timerLabel.innerHTML = '00:00:00';
   }
+
   function timer() {
     if (status == 1) {
       setTimeout(function () {
@@ -43,10 +45,9 @@ $(() => {
         timer();
       }, 10);
     }
-  }
+  };
 
   /* Start button Logic*/
-  /* on click of emerald (will clicking start text work?) */
   $("#start-button").click(function() {
     cardRandomizer();
    /*clear cover-sheet*/
@@ -55,35 +56,18 @@ $(() => {
     $('#start-button').fadeOut(500);
     /* start clock */
     timerStart();
-    /*other options: bring up difficulty menu &/or multiplayer options*/
    });
 
-  //rest button functions
+  //reset button functions
 
   $("#restart-button").click(function() {
     /*bring up start button*/
+      uncoverAllCards();
     if ($("#start-button").is(":visible")===false){
       $("#cover-sheet").removeClass("hidden");
       $("#start-button").fadeIn(300);
     };
     
-     /*un hide cards*/
-    // let cardCoverArray = [];
-    // const createCoverDivArray = function () {
-    //   $("div").each(function () {
-    //     if ($(this).hasClass("card-cover") === true) {
-    //       cardCoverArray.push(this);
-    //       return cardCoverArray;
-    //     };
-    //   });
-    // };
-    // createCoverDivArray();
-    // console.log(cardCoverArray);
-    // cardCoverArray.forEach(function (n) {
-    //   if ($(n).hasClass("hidden") === false) {
-    //     $(n).addClass("hidden");
-    //   }
-    // });
     $("div").each(function () {
       if ($(this).hasClass("flip") === true) {
         this.classList.remove('flip');
@@ -96,21 +80,12 @@ $(() => {
     timerReset();
     timerLabel.innerHTML = '00:00:00';
     $(`#timerLabel`).css('color', 'none')
-    /*flip cards if they aren't hidden on cover-up*/
-
-    /*stop clock*/
-
-    /*zero out clock*/
-
   });
 
 
   /*matching card logic */
   $(`.flip-card`).on(`click`, cardClick);
   function cardClick() {
-    // if (gameLock===true){
-    //   return;
-    // }
     if ($(this).hasClass("invisible")===true){
       return;
     }
@@ -125,7 +100,6 @@ $(() => {
       console.log({ firstPick });
       console.log({ firstPickId });
     } else if (pickCount === 1) {
-      // gameLock=true;
       secondPickId = $(this).attr('id');
       if (firstPickId === secondPickId) {
         return;
@@ -142,32 +116,28 @@ $(() => {
           numOfMatches++;
           console.log({ numOfMatches });
           if (numOfMatches === cardDivArray.length / 2) {
-            console.log("you are the winner!!!!!!!!!!!");
+            console.warn("you're winner!!!!!!!!!!!");
             timerStop();
           }
-          /* Derek's Meddlings - to hide the cards upon successful match */
-          // firstCard.fadeOut(100);
-          // secondCard.fad(100);
-          hideMatch();
-          /* end meddling */
+          hideMatch();         
+          coverCards();
           console.log("its a match");
-          // gameLock=false;
         } else {
           unflipCards();
-          console.log("NOT A MATCH!!");
-          // gameLock=false;
-        }
+          console.log("NOT A MATCH!!");        }
       }
     }
   }
-  /* hide matches function */
+
   function hideMatch() {
-    // gameLock=false;
-    setTimeout(() => {
+    $("#cover-sheet").removeClass("hidden");
+    setTimeout(function() {
       firstCard.classList.add(`invisible`);
       secondCard.classList.add(`invisible`);
     }, 700);
-  }
+    setTimeout(function(){
+      $("#cover-sheet").addClass("hidden")}, 700);
+  };
 
   function doTheyMatch(pick1, pick2) {
     if (pick1 === pick2) {
@@ -175,20 +145,20 @@ $(() => {
     } else {
       return false;
     }
-  }
-  // function for unfliping non matches.
+  };
+
   function unflipCards() {
-    // gameLock=false;
-    setTimeout(() => {
+    $("#cover-sheet").removeClass("hidden");
+    setTimeout( function(){
       firstCard.classList.remove(`flip`);
       secondCard.classList.remove(`flip`);
     }, 700);
-  }
+    setTimeout(function(){
+      $("#cover-sheet").addClass("hidden")}, 700);;
+  };
 
   /* card randomizer function here */
   const cardRandomizer = function () {
-    // let cardDivArray = [];
-
     const createCardDivArray = function () {
       $("div").each(function () {
         if ($(this).hasClass("flip-card") === true) {
@@ -202,4 +172,16 @@ $(() => {
       $(n).css("order", `${Math.floor(Math.random() * 99)}`);
     });
   };
+
+  const coverCards = function(){
+    $(firstCard.childNodes[5]).removeClass("hidden").addClass("z2");
+    $(secondCard.childNodes[5]).removeClass("hidden").addClass("z2");
+  }
+
+  const uncoverAllCards = function(){
+    cardDivArray.forEach(function (n) {
+      $(n.childNodes[5]).removeClass("z2").addClass("hidden");
+    });
+  };
+
 });
