@@ -481,7 +481,9 @@ body {
   }
   #timerLabel{
     padding: 10px;
-    font-size: 2.5em;
+    height: 50%;
+    width: 90%;
+    border-radius: 15px;
   }
 }
 /* testing styling - to show card faces and remove cover div*/
