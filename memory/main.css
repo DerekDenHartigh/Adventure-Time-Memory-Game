@@ -271,6 +271,15 @@ body {
     display: none;
   }
 
+  #win-box{
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    width: 80%;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+
   #start-button{
     position: absolute;
     width: 80%;
@@ -278,6 +287,7 @@ body {
     right: 50%;
     transform: translate(50%, -50%);
   }
+
     #emerald{
       opacity: .85;
     }
@@ -292,6 +302,14 @@ body {
       transform: translate(50%, -50%);
       opacity: .8;
     }
+
+    .centered {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      /* bring your own prefixes */
+      /* transform: translate(-50%, -50%); */
+     }
 
     /* for 3d positioning*/
     .z1{
@@ -367,6 +385,10 @@ body {
           height: 80px;
         }
 
+    #win-box{
+       width: auto;
+       }
+
     #start-button{
       width: auto;
     }
@@ -386,6 +408,13 @@ body {
         opacity: .8;
 
       }
+
+      .winTime{
+        border: 5px solid rgb(255,198,32);
+        background-color: rgb(0,167,197);
+        padding: 5px
+      }
+      
 
       .maincontainer{
         min-width: 600px;
@@ -481,7 +510,10 @@ body {
   }
   #timerLabel{
     padding: 10px;
-    font-size: 2.5em;
+    /* font-size: 2.5em; */
+    height: 50%;
+    width: 90%;
+    border-radius: 15px;
   }
 }
 /* testing styling - to show card faces and remove cover div*/
