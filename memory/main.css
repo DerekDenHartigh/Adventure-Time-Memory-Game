@@ -9,7 +9,7 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
 
 /*Mobile styling*/
 
-*, .card-cover:hover {
+*, body, html {
   /* cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), auto;
   cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), auto;
   cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), default;
@@ -17,7 +17,7 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
   cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
 }
 
-#start-button:hover, #emerald:hover, #start-text, .front-side:hover, .back-side:hover, #restart-button:hover{
+#start-button:hover, #emerald:hover, #start-text, .flip-card.back-side:hover, #restart-button:hover, img.back-side, img.back-side:hover{
 cursor: url(group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
 } 
 
@@ -533,10 +533,10 @@ cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Verti
 
 
 /* ANIMATION BOO YAH. OF COURSE */
-.color-change-2x {
+/* .color-change-2x {
 	-webkit-animation: color-change-2x 2s linear infinite alternate both;
   animation: color-change-2x 2s linear infinite alternate both;
-}
+} */
 
 
 .vibrate-1 {
@@ -556,9 +556,9 @@ cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Verti
 
 
 
-@-webkit-keyframes color-change-2x {
+/* @-webkit-keyframes color-change-2x {
   0% {
-    /* background: #1C7CCC; */
+    background: #1C7CCC;
     background: #EB0600;
   }
   100% {
@@ -568,12 +568,12 @@ cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Verti
 @keyframes color-change-2x {
   0% {
     background: #19dcea;
-    /* background: #EB0600; */
+    background: #EB0600;
   }
   100% {
     background: rgb(255,198,32);
   }
-}
+} */
 
 
 
