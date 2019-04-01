@@ -22,7 +22,7 @@ $(() => {
 
   function timerStop() {
     status = 0;
-    // $(`#timerLabel`).css('color', 'rgb(0,167,197)');
+    $(`#timerLabel`).css('color', 'rgb(0,167,197)');
   }
 
   function timerReset() {
