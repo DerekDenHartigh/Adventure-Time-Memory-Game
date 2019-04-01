@@ -9,17 +9,13 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
 
 /*Mobile styling*/
 
-*, .card-cover:hover {
-  /* cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), auto;
-  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), auto;
-  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), default;
-  cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), default; */
-  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
+* {
+  cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/FinnSword_64.png), url(/group-labs/group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
 }
 
-#start-button:hover, #emerald:hover, #start-text, .front-side:hover, .back-side:hover, #restart-button:hover{
-cursor: url(group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
-} 
+#start-button:hover, #emerald:hover, #start-text, .flip-card:hover, .front-side:hover, .back-side:hover, #restart-button:hover{
+  cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_64.png), url(/group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
+}
 
 /* was messing up the flipped cards */
 /* .flip-card:hover{
@@ -29,9 +25,6 @@ cursor: url(group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png),
 
 .invisible{
   opacity: 0;
-}
-img.back-side:hover, .invisible:hover, .flip-card > img.back-side:hover{
-  cursor: pointer;
 }
 
 #clock-box{
@@ -271,6 +264,15 @@ body {
     display: none;
   }
 
+  #win-box{
+    position: absolute;
+    font-family: 'Press Start 2P', cursive;
+    width: 80%;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+  }
+
   #start-button{
     position: absolute;
     width: 80%;
@@ -278,6 +280,7 @@ body {
     right: 50%;
     transform: translate(50%, -50%);
   }
+
     #emerald{
       opacity: .85;
     }
@@ -292,6 +295,14 @@ body {
       transform: translate(50%, -50%);
       opacity: .8;
     }
+
+    .centered {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      /* bring your own prefixes */
+      /* transform: translate(-50%, -50%); */
+     }
 
     /* for 3d positioning*/
     .z1{
@@ -367,6 +378,10 @@ body {
           height: 80px;
         }
 
+    #win-box{
+       width: auto;
+       }
+
     #start-button{
       width: auto;
     }
@@ -386,6 +401,13 @@ body {
         opacity: .8;
 
       }
+
+      .winTime{
+        border: 5px solid rgb(255,198,32);
+        background-color: rgb(0,167,197);
+        padding: 5px
+      }
+      
 
       .maincontainer{
         min-width: 600px;
@@ -481,7 +503,10 @@ body {
   }
   #timerLabel{
     padding: 10px;
-    font-size: 2.5em;
+    /* font-size: 2.5em; */
+    height: 50%;
+    width: 90%;
+    border-radius: 15px;
   }
 }
 /* testing styling - to show card faces and remove cover div*/
@@ -506,17 +531,6 @@ body {
 
 } */
 
-* {
-  /* cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), auto;
-  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), auto;
-  cursor: url(group-lab1/memory/Cursor-archetypes/FinnSword_64.png), default;
-  cursor: url("group-lab1/memory/Cursor-archetypes/FinnSword_64.png"), default; */
-  cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
-}
-
-#start-button:hover, #emerald:hover, #start-text, .flip-card:hover, .front-side:hover, .back-side:hover, #restart-button:hover{
-cursor: url(group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
-}
 
 /* .flip-card:hover{
   transform: scale(1.1);
