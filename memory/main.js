@@ -1,5 +1,16 @@
 "use strict"
 $(() => {
+  /* working on the timerStop bug */
+  let winNumber = 0;
+  let cardDivArray = [];
+  const createCardDivArray = function () {
+    $("div").each(function () {
+      if ($(this).hasClass("flip-card") === true) {
+        cardDivArray.push(this);
+        return cardDivArray;
+      }
+    })
+  }; createCardDivArray();
   // variables needed for the matching logic
   let pickCount = 0;
   let firstPick;
@@ -9,7 +20,6 @@ $(() => {
   let firstCard;
   let secondCard;
   let numOfMatches = 0;
-  let cardDivArray = [];
   //variables for the timer
   let status = 0; // 0:stop 1:running
   let time = 0;
@@ -50,7 +60,10 @@ $(() => {
 
   /* Start button Logic*/
   $("#start-button").click(function () {
+    /*randomizes card order*/
     cardRandomizer();
+    /* resets the # of matches to 0*/
+    numOfMatches = 0;
     /*clear cover-sheet*/
     $('#cover-sheet').addClass("hidden");
     /* hide start-button */
@@ -115,15 +128,19 @@ $(() => {
           numOfMatches++;
           if (numOfMatches === cardDivArray.length / 2) {
             timerStop();
+            winNumber++;
+            console.warn(`you've played ${winNumber} times without refreshing!`);
             let finalTime = $(`#timerLabel`).text();
             setTimeout(function () {
               $(`#win-box`).removeClass('hidden');
-              $(`#win-box`).append(`<h1 class="winTime">You Win! Your time was ${finalTime}, Great Job!</h1>`);
+              $(`#win-box`).append(`<h1 class="winTime" id="winNumber${winNumber}">You Win! Your time was ${finalTime}, Great Job!</h1>`);
             }, 700);
             $(`#win-box`).click(function () {
               $(`#win-box`).addClass('hidden');
-              $(`.winTime`).addClass('hidden');
+              $(`#winNumber${winNumber}`).addClass('hidden');
             });
+            setTimeout(function(){return winNumber;
+            }, 707);
           }
           hideMatch();
           coverCards();
@@ -168,15 +185,6 @@ $(() => {
 
   /* card randomizer function here */
   const cardRandomizer = function () {
-    const createCardDivArray = function () {
-      $("div").each(function () {
-        if ($(this).hasClass("flip-card") === true) {
-          cardDivArray.push(this);
-          return cardDivArray;
-        }
-      })
-    };
-    createCardDivArray();
     cardDivArray.forEach(function (n) {
       $(n).css("order", `${Math.floor(Math.random() * 99)}`);
     });
