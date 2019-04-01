@@ -8,11 +8,11 @@ color scheme: https://www.colourlovers.com/palette/1698329/Adventure_Time!
 */
 
 * {
-  cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/FinnSword_64.png), url(/group-labs/group-lab1/memory/Cursor-archetypes/FinnSword_32.png), default;
+  cursor: url(./Cursor-archetypes/FinnSword_64.png), url(./Cursor-archetypes/FinnSword_32.png), default;
 }
 
 #start-button:hover, #emerald:hover, #start-text, .flip-card:hover, .front-side:hover, .back-side:hover, #restart-button:hover{
-  cursor: url(/group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_64.png), url(/group-labs/group-lab1/memory/Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
+  cursor: url(./Cursor-archetypes/Billy_Gauntlet_Vertical_64.png), url(./Cursor-archetypes/Billy_Gauntlet_Vertical_32.png), pointer;
 }
 
 .invisible{
