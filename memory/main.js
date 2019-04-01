@@ -116,8 +116,10 @@ $(() => {
           if (numOfMatches === cardDivArray.length / 2) {
             timerStop();
             let finalTime = $(`#timerLabel`).text();
-            $(`#win-box`).removeClass('hidden');
-            $(`#win-box`).append(`<h1 class="winTime">You Win! Your time was ${finalTime}, Great Job!</h1>`);
+            setTimeout(function () {
+              $(`#win-box`).removeClass('hidden');
+              $(`#win-box`).append(`<h1 class="winTime">You Win! Your time was ${finalTime}, Great Job!</h1>`);
+            }, 700);
             $(`#win-box`).click(function () {
               $(`#win-box`).addClass('hidden');
               $(`.winTime`).addClass('hidden');
