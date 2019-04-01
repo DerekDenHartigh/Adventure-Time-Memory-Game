@@ -10,7 +10,7 @@ $(() => {
   let secondCard;
   let numOfMatches = 0;
   let cardDivArray = [];
-  //below are variable for the timer
+  //variables for the timer
   let status = 0; // 0:stop 1:running
   let time = 0;
   // below are the functions for the timer
@@ -63,7 +63,6 @@ $(() => {
   });
 
   //reset button functions
-
   $("#restart-button").click(function () {
     $(`#win-box`).addClass('hidden');
     $(`.winTime`).addClass('hidden');
@@ -73,7 +72,6 @@ $(() => {
       $("#cover-sheet").removeClass("hidden");
       $("#start-button").fadeIn(300);
     };
-
 
     $("div").each(function () {
       if ($(this).hasClass("flip") === true) {
@@ -195,5 +193,4 @@ $(() => {
       $(n.childNodes[5]).removeClass("z2").addClass("hidden");
     });
   };
-
 });
